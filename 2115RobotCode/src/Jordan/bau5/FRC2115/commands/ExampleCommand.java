@@ -13,6 +13,7 @@ public class ExampleCommand extends CommandBase {
     }
 
     // Called just before this Command runs the first time
+    //I ADDED A COMMENT TO TEST GITHUB
     protected void initialize() {
     }
 

@@ -14,15 +14,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Shooter extends Subsystem 
 {
-    private int JAGUAR_1_CHANNEL, JAGUAR_2_CHANNEL;
-    private Jaguar j1,j2;
-    public Shooter(int jC1, int jC2)
+    private int JAGUAR_CHANNEL;
+    private Jaguar j1;
+    public Shooter(int jC)
     {
-        JAGUAR_1_CHANNEL = jC1;
-        JAGUAR_2_CHANNEL = jC2;
+        JAGUAR_CHANNEL = jC;
         setDefaultCommand(new Shoot());
-        j1 = new Jaguar(JAGUAR_1_CHANNEL);
-        j2 = new Jaguar(JAGUAR_2_CHANNEL);
+        j1 = new Jaguar(JAGUAR_CHANNEL);
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -35,17 +33,10 @@ public class Shooter extends Subsystem
     
     public void setWheels(double speed)
     {
-        j1.set(-speed);
-        j2.set(speed);
+        j1.set(speed);
     }
     public void spinWheels()
     {
-        j1.set(-1);
-        j2.set(1);
-    }
-    
-    public void shoot()
-    {
-        
+        j1.set(1);
     }
 }

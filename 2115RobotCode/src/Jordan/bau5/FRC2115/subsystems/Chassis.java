@@ -20,9 +20,9 @@ public class Chassis extends Subsystem
     // here. Call these from Commands.
 
     
-    public Chassis()
+    public Chassis(int ch1, int ch2)
     {
-        drive = new RobotDrive(1, 2);
+        drive = new RobotDrive(ch1, ch2);
         drive.setSafetyEnabled(false);
     }
     

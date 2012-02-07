@@ -17,9 +17,9 @@ import Jordan.bau5.FRC2115.subsystems.Shooter;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    public static Chassis chassis  = new Chassis();
+    public static Chassis chassis  = new Chassis(1,2);
     public static Shooter shooter = new Shooter(3);
-    public static Elevator elevator = new Elevator(1);
+    public static Elevator elevator = new Elevator(4);
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 

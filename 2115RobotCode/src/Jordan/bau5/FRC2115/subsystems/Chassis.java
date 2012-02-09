@@ -8,6 +8,7 @@ import Jordan.bau5.FRC2115.commands.DriveWithJoystick;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import Jordan.bau5.FRC2115.RobotMap;
 
 /**
  *
@@ -20,9 +21,9 @@ public class Chassis extends Subsystem
     // here. Call these from Commands.
 
     
-    public Chassis(int ch1, int ch2)
+    public Chassis()
     {
-        drive = new RobotDrive(ch1, ch2);
+        drive = new RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
         drive.setSafetyEnabled(false);
     }
     

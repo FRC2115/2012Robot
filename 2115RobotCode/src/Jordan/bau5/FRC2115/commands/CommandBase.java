@@ -14,7 +14,7 @@ import Jordan.bau5.FRC2115.subsystems.Chassis;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    public static Chassis chassis  = new Chassis(1,2);
+    public static Chassis chassis  = new Chassis();
     // Create a single static instance of all of your subsystems
 
     public static void init() {

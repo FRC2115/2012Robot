@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.Chassis;
 import Jordan.bau5.FRC2115.subsystems.Elevator;
-import Jordan.bau5.FRC2115.subsystems.ExampleSubsystem;
 import Jordan.bau5.FRC2115.subsystems.Shooter;
 
 /**
@@ -21,7 +20,6 @@ public abstract class CommandBase extends Command {
     public static Shooter shooter = new Shooter(3);
     public static Elevator elevator = new Elevator(4);
     // Create a single static instance of all of your subsystems
-    public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -32,8 +30,6 @@ public abstract class CommandBase extends Command {
         oi = new OI();
         
 
-        // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(exampleSubsystem);
     }
 
     public CommandBase(String name) {

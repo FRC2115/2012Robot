@@ -23,6 +23,5 @@ public class OI
     {
         return j2;
     }
-    // Process operator interface input here.
 }
 

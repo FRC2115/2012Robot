@@ -5,17 +5,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.Chassis;
 
-/**
- * The base for all commands. All atomic commands should subclass CommandBase.
- * CommandBase stores creates and stores each control system. To access a
- * subsystem elsewhere in your code in your code use CommandBase.exampleSubsystem
- * @author Author
- */
 public abstract class CommandBase extends Command {
 
+    // Create a single static instance of all of your subsystems
     public static OI oi;
     public static Chassis chassis  = new Chassis();
-    // Create a single static instance of all of your subsystems
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely

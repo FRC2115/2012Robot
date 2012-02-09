@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Jordan.bau5.FRC2115.subsystems;
 
 import Jordan.bau5.FRC2115.commands.DriveWithJoystick;
@@ -10,17 +6,10 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import Jordan.bau5.FRC2115.RobotMap;
 
-/**
- *
- * @author Jordan Giacone
- */
 public class Chassis extends Subsystem 
 {
     public RobotDrive drive;
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-
-    
+   
     public Chassis()
     {
         drive = new RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
@@ -50,7 +39,5 @@ public class Chassis extends Subsystem
     public void initDefaultCommand() 
     {
         setDefaultCommand(new DriveWithJoystick());
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
     }
 }

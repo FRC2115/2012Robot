@@ -22,22 +22,13 @@ import Jordan.bau5.FRC2115.commands.CommandBase;
  */
 public class MainRobotClass extends IterativeRobot {
 
-    /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
-     */
     public void robotInit() {
-
-        // Initialize all subsystems
         CommandBase.init();
     }
 
     public void autonomousInit() {
     }
 
-    /**
-     * This function is called periodically during autonomous
-     */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
     }
@@ -45,9 +36,6 @@ public class MainRobotClass extends IterativeRobot {
     public void teleopInit() {
     }
 
-    /**
-     * This function is called periodically during operator control
-     */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
     }

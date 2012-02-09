@@ -7,7 +7,6 @@
 
 package Jordan.bau5.FRC2115;
 
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;

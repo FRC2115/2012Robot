@@ -4,8 +4,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.Chassis;
-import Jordan.bau5.FRC2115.subsystems.Elevator;
-import Jordan.bau5.FRC2115.subsystems.Shooter;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -17,8 +15,6 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static Chassis chassis  = new Chassis(1,2);
-    public static Shooter shooter = new Shooter(3);
-    public static Elevator elevator = new Elevator(4);
     // Create a single static instance of all of your subsystems
 
     public static void init() {

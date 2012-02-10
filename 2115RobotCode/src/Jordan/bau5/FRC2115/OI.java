@@ -1,4 +1,3 @@
-
 package Jordan.bau5.FRC2115;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -23,6 +22,4 @@ public class OI
     {
         return j2;
     }
-    // Process operator interface input here.
 }
-

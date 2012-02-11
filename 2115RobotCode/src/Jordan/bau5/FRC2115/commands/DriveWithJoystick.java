@@ -18,13 +18,16 @@ public class DriveWithJoystick extends CommandBase
         chassis.driveWithJoystick(oi.getJ1(), oi.getJ2());
     }
 
-    protected boolean isFinished() {
+    protected boolean isFinished()
+    {
         return false;
     }
 
-    protected void end() {
+    protected void end()
+    {
     }
 
-    protected void interrupted() {
+    protected void interrupted()
+    {
     }
 }

@@ -8,32 +8,28 @@ package Jordan.bau5.FRC2115.commands;
  *
  * @author Jordan
  */
-public class DeployPlunger extends CommandBase {
+public class DownPlunger extends CommandBase {
     
-    private double m_timeout;
-    public DeployPlunger(double timeout) 
+    public DownPlunger() 
     {
-        m_timeout = timeout;
         requires(plunger);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() 
-    {
-        setTimeout(m_timeout);
+    protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        plunger.shoot();
+        plunger.down();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true

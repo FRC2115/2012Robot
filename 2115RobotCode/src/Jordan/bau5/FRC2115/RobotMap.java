@@ -10,6 +10,7 @@ public class RobotMap {
     public static final int leftDriveMotor = 1, 
             rightDriveMotor = 2, 
             shooterMotor = 3, 
-            rollerMotor = 4, 
+            rollerMotor = 5, 
+            armMotor = 4,
             solenoidChannel = 1;
 }

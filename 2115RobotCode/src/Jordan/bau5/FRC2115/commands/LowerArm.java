@@ -4,17 +4,19 @@
  */
 package Jordan.bau5.FRC2115.commands;
 
+import Jordan.bau5.FRC2115.subsystems.BridgeArm;
+
 /**
  *
  * @author Jordan
  */
-public class DeployPlunger extends CommandBase {
+public class LowerArm extends CommandBase {
     
     private double m_timeout;
-    public DeployPlunger(double timeout) 
+    public LowerArm(double timeOut) 
     {
-        m_timeout = timeout;
-        requires(plunger);
+        requires(arm);
+        m_timeout = timeOut;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -28,7 +30,7 @@ public class DeployPlunger extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        plunger.shoot();
+        arm.raise();
     }
 
     // Make this return true when this Command no longer needs to run execute()

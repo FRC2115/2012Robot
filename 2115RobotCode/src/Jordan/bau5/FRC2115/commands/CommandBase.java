@@ -3,6 +3,7 @@ package Jordan.bau5.FRC2115.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
+import Jordan.bau5.FRC2115.subsystems.BridgeArm;
 import Jordan.bau5.FRC2115.subsystems.Chassis;
 import Jordan.bau5.FRC2115.subsystems.Plunger;
 import Jordan.bau5.FRC2115.subsystems.Shooter;
@@ -14,6 +15,7 @@ public abstract class CommandBase extends Command
     public static Chassis chassis  = new Chassis();
     public static Plunger plunger = new Plunger();
     public static Shooter shooter = new Shooter();
+    public static BridgeArm arm = new BridgeArm();
 
     public static void init()
     {

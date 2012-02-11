@@ -19,23 +19,28 @@ import Jordan.bau5.FRC2115.commands.CommandBase;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class MainRobotClass extends IterativeRobot {
-
-    public void robotInit() {
+public class MainRobotClass extends IterativeRobot
+{
+    public void robotInit()
+    {
         CommandBase.init();
     }
 
-    public void autonomousInit() {
+    public void autonomousInit()
+    {
     }
 
-    public void autonomousPeriodic() {
+    public void autonomousPeriodic()
+    {
         Scheduler.getInstance().run();
     }
 
-    public void teleopInit() {
+    public void teleopInit()
+    {
     }
 
-    public void teleopPeriodic() {
+    public void teleopPeriodic()
+    {
         Scheduler.getInstance().run();
     }
 }

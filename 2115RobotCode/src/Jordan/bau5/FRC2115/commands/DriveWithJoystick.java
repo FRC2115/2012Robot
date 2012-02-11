@@ -1,7 +1,7 @@
 package Jordan.bau5.FRC2115.commands;
 
-public class DriveWithJoystick extends CommandBase {
-    
+public class DriveWithJoystick extends CommandBase
+{
     public DriveWithJoystick() 
     {
         requires(chassis);

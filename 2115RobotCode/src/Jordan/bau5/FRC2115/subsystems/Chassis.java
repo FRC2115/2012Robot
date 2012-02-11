@@ -12,7 +12,9 @@ public class Chassis extends Subsystem
    
     public Chassis()
     {
-        drive = new RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
+        drive = new RobotDrive(RobotMap.leftDriveMotor, 
+                RobotMap.rightDriveMotor);
+        drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         drive.setSafetyEnabled(false);
     }
     

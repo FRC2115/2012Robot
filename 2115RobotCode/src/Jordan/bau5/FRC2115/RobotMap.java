@@ -7,5 +7,9 @@ package Jordan.bau5.FRC2115;
  * floating around.
  */
 public class RobotMap {
-    public static final int leftMotor = 1, rightMotor = 2;
+    public static final int leftDriveMotor = 1, 
+            rightDriveMotor = 2, 
+            shooterMotor = 3, 
+            rollerMotor = 4, 
+            solenoidChannel = 1;
 }

@@ -4,12 +4,16 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.Chassis;
+import Jordan.bau5.FRC2115.subsystems.Plunger;
+import Jordan.bau5.FRC2115.subsystems.Shooter;
 
 public abstract class CommandBase extends Command
 {
     // Create a single static instance of all of your subsystems
     public static OI oi;
     public static Chassis chassis  = new Chassis();
+    public static Plunger plunger = new Plunger();
+    public static Shooter shooter = new Shooter();
 
     public static void init()
     {

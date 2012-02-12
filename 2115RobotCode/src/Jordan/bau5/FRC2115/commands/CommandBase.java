@@ -6,6 +6,7 @@ import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.BridgeArm;
 import Jordan.bau5.FRC2115.subsystems.Chassis;
 import Jordan.bau5.FRC2115.subsystems.Plunger;
+import Jordan.bau5.FRC2115.subsystems.Roller;
 import Jordan.bau5.FRC2115.subsystems.Shooter;
 
 public abstract class CommandBase extends Command
@@ -16,6 +17,7 @@ public abstract class CommandBase extends Command
     public static Plunger plunger = new Plunger();
     public static Shooter shooter = new Shooter();
     public static BridgeArm arm = new BridgeArm();
+    public static Roller roller = new Roller();
 
     public static void init()
     {

@@ -8,8 +8,9 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI 
 {
     public static int JOYSTICK_ONE_PORT = 1, JOYSTICK_TWO_PORT = 2;
-    public static Joystick j1, j2;
-    public static JoystickButton plungerButton, bridgeButton;
+    
+    public Joystick j1, j2;
+    public JoystickButton plungerButton, bridgeButton;
     
     public OI()
     {

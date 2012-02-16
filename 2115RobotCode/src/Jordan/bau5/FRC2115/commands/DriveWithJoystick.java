@@ -1,7 +1,5 @@
 package Jordan.bau5.FRC2115.commands;
 
-import Jordan.bau5.FRC2115.OI;
-
 public class DriveWithJoystick extends CommandBase
 {
     public DriveWithJoystick() 
@@ -17,7 +15,7 @@ public class DriveWithJoystick extends CommandBase
 
     protected void execute() 
     {
-        chassis.driveWithJoystick(OI.j1, OI.j2);
+        chassis.driveWithJoystick(oi.j1, oi.j2);
     }
 
     protected boolean isFinished()

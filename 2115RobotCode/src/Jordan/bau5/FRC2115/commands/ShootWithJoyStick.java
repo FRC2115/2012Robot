@@ -4,8 +4,6 @@
  */
 package Jordan.bau5.FRC2115.commands;
 
-import Jordan.bau5.FRC2115.OI;
-
 /**
  *
  * @author Jordan
@@ -26,7 +24,7 @@ public class ShootWithJoyStick extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        shooter.spinWithJoystick(OI.j1);
+        shooter.spinWithJoystick(oi.j1);
        
     }
 

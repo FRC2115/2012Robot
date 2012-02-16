@@ -30,6 +30,8 @@ public class Shooter extends Subsystem
     public void spinWithJoystick(Joystick joystick)
     {
         double joyStickValue = joystick.getZ();
+        //Reverse axis because our joystick makes the top -1
+        //Then change the range from -1 -> 1 to 0 -> 1
         j.set(((-1 * joyStickValue) + 1) / 2);
     }
 }

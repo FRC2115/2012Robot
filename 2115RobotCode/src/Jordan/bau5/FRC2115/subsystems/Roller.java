@@ -17,7 +17,7 @@ public class Roller extends Subsystem
 {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    public static final double ROLLER_SPEED = -0.7;
     private Jaguar j;
     
     public Roller()
@@ -33,6 +33,6 @@ public class Roller extends Subsystem
     }
     public void roll()
     {
-        j.set(1);
+        j.set(ROLLER_SPEED);
     }
 }

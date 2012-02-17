@@ -12,5 +12,6 @@ public class RobotMap {
             shooterMotor = 3, 
             rollerMotor = 5, 
             armMotor = 4,
-            solenoidChannel = 1;
+            solenoidChannel = 1,
+            armSolenoidChannel = 2;
 }

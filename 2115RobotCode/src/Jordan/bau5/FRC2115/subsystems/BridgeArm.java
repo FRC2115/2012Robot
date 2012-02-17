@@ -6,6 +6,7 @@ package Jordan.bau5.FRC2115.subsystems;
 
 import Jordan.bau5.FRC2115.RobotMap;
 import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -16,11 +17,11 @@ public class BridgeArm extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    private Jaguar j;
+    private Solenoid s;
     
     public BridgeArm()
     {
-        j = new Jaguar(RobotMap.armMotor);
+        s = new Solenoid(RobotMap.armSolenoidChannel);
     }
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -29,10 +30,10 @@ public class BridgeArm extends Subsystem {
     
     public void lower()
     {
-        j.set(-.1);
+        s.set(true);
     }
     public void raise()
     {
-        j.set(.1);
+        s.set(false);
     }
 }

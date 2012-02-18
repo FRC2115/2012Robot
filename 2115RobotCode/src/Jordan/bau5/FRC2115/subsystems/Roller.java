@@ -5,7 +5,6 @@
 package Jordan.bau5.FRC2115.subsystems;
 
 import Jordan.bau5.FRC2115.RobotMap;
-import Jordan.bau5.FRC2115.commands.RollRoller;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -26,13 +25,15 @@ public class Roller extends Subsystem
     }
     public void initDefaultCommand() 
     {
-        //Need to think of a way to not have the roller just run constantly
-        setDefaultCommand(new RollRoller());
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
     public void roll()
     {
         j.set(ROLLER_SPEED);
+    }
+    public void stop()
+    {
+        j.set(0);
     }
 }

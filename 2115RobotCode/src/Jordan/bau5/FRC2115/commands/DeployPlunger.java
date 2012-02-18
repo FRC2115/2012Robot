@@ -27,9 +27,11 @@ public class DeployPlunger extends CommandBase
 
     protected void end()
     {
+        plunger.down();
     }
 
     protected void interrupted()
     {
+        end();
     }
 }

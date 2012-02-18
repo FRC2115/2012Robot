@@ -20,8 +20,8 @@ public class OI
         plungerButton = new JoystickButton(j1, 1); 
         bridgeButton = new JoystickButton(j1, 2);
         rollerButton = new JoystickButton(j1, 3);
-        plungerButton.whenPressed(new DeployPlunger(500));
-        bridgeButton.whenPressed(new LowerArm(500));
+        plungerButton.whenPressed(new DeployPlunger(0.5));
+        bridgeButton.whenPressed(new LowerArm(0.5));
         rollerButton.whileHeld(new RollRoller());
     }
 }

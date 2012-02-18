@@ -11,7 +11,7 @@ public class OI
     public static final int JOYSTICK_ONE_PORT = 1, JOYSTICK_TWO_PORT = 2;
     
     public Joystick j1, j2;
-    public JoystickButton plungerButton, bridgeButton, rollerButton;
+    public JoystickButton plungerButton, bridgeButton, rollerButton, autoAim;
     
     public OI()
     {
@@ -20,8 +20,10 @@ public class OI
         plungerButton = new JoystickButton(j1, 1); 
         bridgeButton = new JoystickButton(j1, 2);
         rollerButton = new JoystickButton(j1, 3);
+        autoAim = new JoystickButton(j2, 3);
         plungerButton.whenPressed(new DeployPlunger(500));
         bridgeButton.whenPressed(new LowerArm(500));
         rollerButton.whileHeld(new RollRoller());
+        autoAim.whenPressed(new DriveWithCamera());
     }
 }

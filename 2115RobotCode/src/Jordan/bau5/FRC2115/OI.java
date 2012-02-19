@@ -9,8 +9,15 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI 
 {   
-    public Joystick j1 = new Joystick(1),
+    private Joystick j1 = new Joystick(1),
             j2 = new Joystick(2);
+    
+    public Joystick jLeftWheel = j1;
+    public int leftAxis = 2;
+    public Joystick jRightWheel = j2;
+    public int rightAxis = 2;
+    public Joystick jShootSetter = j1;
+    public int shootSetAxis = 3;
     
     public JoystickButton plungerButton = new JoystickButton(j1, 1),
             bridgeButton = new JoystickButton(j1, 2),

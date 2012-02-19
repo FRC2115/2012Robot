@@ -13,7 +13,7 @@ public class ShootWithJoyStick extends CommandBase {
 
     protected void execute() 
     {
-        shooter.spinWithJoystick(oi.j1);
+        shooter.spinWithJoystick(oi.jShootSetter, oi.shootSetAxis);
     }
 
     protected boolean isFinished()

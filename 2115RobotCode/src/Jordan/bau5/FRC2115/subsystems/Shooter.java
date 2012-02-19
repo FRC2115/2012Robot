@@ -15,9 +15,9 @@ public class Shooter extends Subsystem
         setDefaultCommand(new ShootWithJoyStick());
     }
     
-    public void spinWithJoystick(Joystick joystick)
+    public void spinWithJoystick(Joystick jSet, int axis)
     {
-        double joyStickValue = joystick.getZ();
+        double joyStickValue = jSet.getRawAxis(axis);
         //Reverse axis because our joystick makes the top -1
         //Then change the range from -1 -> 1 to 0 -> 1
         j.set(((-1 * joyStickValue) + 1) / 2);

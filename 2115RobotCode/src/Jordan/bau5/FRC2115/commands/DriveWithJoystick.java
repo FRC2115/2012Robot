@@ -15,7 +15,8 @@ public class DriveWithJoystick extends CommandBase
 
     protected void execute() 
     {
-        chassis.driveWithJoystick(oi.j1, oi.j2);
+        chassis.driveWithJoystick(oi.jLeftWheel, oi.leftAxis,
+                oi.jRightWheel, oi.rightAxis);
     }
 
     protected boolean isFinished()

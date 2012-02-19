@@ -10,7 +10,7 @@ public class Plunger extends Subsystem
     
     public Plunger()
     {
-        s = new Solenoid(RobotMap.solenoidChannel);
+        s = new Solenoid(RobotMap.plungerSolenoidChannel);
     }
 
     public void shoot()

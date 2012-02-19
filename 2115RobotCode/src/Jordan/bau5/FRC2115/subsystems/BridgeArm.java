@@ -1,28 +1,41 @@
 package Jordan.bau5.FRC2115.subsystems;
 
 import Jordan.bau5.FRC2115.RobotMap;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class BridgeArm extends Subsystem
 {
-    private Solenoid s;
+    private Solenoid solenoidOut;
+    private Solenoid solenoidDown;
     
     public BridgeArm()
     {
-        s = new Solenoid(RobotMap.armSolenoidChannel);
+        solenoidOut = new Solenoid(RobotMap.armOutSolenoidChannel);
+        solenoidDown = new Solenoid(RobotMap.armDownSolenoidChannel);
     }
+    
     public void initDefaultCommand()
     {
     }
     
-    public void lower()
+    public void outExtend()
     {
-        s.set(true);
+        solenoidOut.set(true);
     }
-    public void raise()
+    
+    public void outRetract()
     {
-        s.set(false);
+        solenoidOut.set(false);
+    }
+    
+    public void downExtend()
+    {
+        solenoidDown.set(true);
+    }
+    
+    public void downRetract()
+    {
+        solenoidDown.set(false);
     }
 }

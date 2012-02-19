@@ -12,8 +12,9 @@ public class RobotMap
             rightDriveMotor = 2, 
             shooterMotor = 3, 
             rollerMotor = 4,
-            solenoidChannel = 1,
-            armSolenoidChannel = 2,
+            plungerSolenoidChannel = 1,
+            armOutSolenoidChannel = 2,
+            armDownSolenoidChannel = 3,
             pressureSwitchChannel = 1,
             compressorRelayChannel = 1;
 }

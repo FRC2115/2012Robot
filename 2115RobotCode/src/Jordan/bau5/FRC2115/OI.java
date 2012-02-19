@@ -25,6 +25,6 @@ public class OI
         plungerButton.whenPressed(new DeployPlunger(500));
         bridgeButton.whenPressed(new LowerArm(500));
         rollerButton.whileHeld(new RollRoller());
-        autoAim.whenPressed(new AutoAlign());
+        autoAim.whileHeld(new AutoAlign());
     }
 }

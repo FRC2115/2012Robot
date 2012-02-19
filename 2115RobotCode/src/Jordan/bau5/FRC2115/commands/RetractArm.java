@@ -1,10 +1,10 @@
 package Jordan.bau5.FRC2115.commands;
 
-public class RaiseArm extends CommandBase
+public class RetractArm extends CommandBase
 {
     private double m_Timeout;
     
-    public RaiseArm(double timeOut) 
+    public RetractArm(double timeOut) 
     {
         requires(arm);
         m_Timeout = timeOut;

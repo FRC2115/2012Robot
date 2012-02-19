@@ -2,11 +2,11 @@ package Jordan.bau5.FRC2115.commands;
 
 import Jordan.bau5.FRC2115.subsystems.BridgeArm;
 
-public class LowerArm extends CommandBase
+public class ExtendArm extends CommandBase
 {
     private double m_timeout;
     
-    public LowerArm(double timeOut) 
+    public ExtendArm(double timeOut) 
     {
         requires(arm);
         m_timeout = timeOut;

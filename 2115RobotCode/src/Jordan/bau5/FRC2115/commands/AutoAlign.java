@@ -1,9 +1,13 @@
-public class AutoAlgin
+package Jordan.bau5.FRC2115.commands;
+
+import Jordan.bau5.FRC2115.commands.CommandBase;
+
+public class AutoAlign extends CommandBase
 {
     public AutoAlign()
     {
-	requires(Camera);
-	requires(Chassis);
+	requires(camera);
+	requires(chassis);
     }
 
     public void initialize()
@@ -12,11 +16,24 @@ public class AutoAlgin
 
     public void execute()
     {
-	if(Camera.processImage() == 0)
-	    drive.tankDrive(j1, j1);
-	else if(Camera.processImage() == -1)
-	    drive.tankDrive(.5, -.5);
-	else if(Camera.processImage() == 1)
-	    drive.tankDrive(-.5, .5);
+	if(camera.processImage() == 0)
+	    chassis.drive.tankDrive(oi.j1, oi.j1);
+	else if(camera.processImage() == -1)
+	    chassis.drive.tankDrive(.5, -.5);
+	else if(camera.processImage() == 1)
+	    chassis.drive.tankDrive(-.5, .5);
+    }
+
+    protected boolean isFinished()
+    {
+        return false;
+    }
+
+    protected void end()
+    {
+    }
+
+    protected void interrupted()
+    {
     }
 }

@@ -3,6 +3,7 @@ package Jordan.bau5.FRC2115;
 import Jordan.bau5.FRC2115.commands.DeployPlunger;
 import Jordan.bau5.FRC2115.commands.LowerArm;
 import Jordan.bau5.FRC2115.commands.RollRoller;
+import Jordan.bau5.FRC2115.commands.AutoAlign;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -24,6 +25,6 @@ public class OI
         plungerButton.whenPressed(new DeployPlunger(500));
         bridgeButton.whenPressed(new LowerArm(500));
         rollerButton.whileHeld(new RollRoller());
-        autoAim.whenPressed(new DriveWithCamera());
+        autoAim.whenPressed(new AutoAlign());
     }
 }

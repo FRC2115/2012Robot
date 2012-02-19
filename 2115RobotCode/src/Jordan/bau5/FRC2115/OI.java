@@ -9,19 +9,19 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI 
 {   
-    private Joystick j1 = new Joystick(1),
-            j2 = new Joystick(2);
+    private Joystick jGamepad = new Joystick(1),
+            jAux = new Joystick(2);
     
-    public Joystick jLeftWheel = j1;
+    public Joystick jLeftWheel = jGamepad;
     public int leftAxis = 2;
-    public Joystick jRightWheel = j2;
-    public int rightAxis = 2;
-    public Joystick jShootSetter = j1;
+    public Joystick jRightWheel = jGamepad;
+    public int rightAxis = 4;
+    public Joystick jShootSetter = jAux;
     public int shootSetAxis = 3;
     
-    public JoystickButton plungerButton = new JoystickButton(j1, 1),
-            bridgeButton = new JoystickButton(j1, 2),
-            rollerButton = new JoystickButton(j1, 3);
+    public JoystickButton plungerButton = new JoystickButton(jGamepad, 6),
+            bridgeButton = new JoystickButton(jGamepad, 9),
+            rollerButton = new JoystickButton(jGamepad, 10);
     
     public OI()
     {

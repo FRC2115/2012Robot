@@ -54,9 +54,9 @@ public class Camera extends Subsystem
             thresholdImage.free();
             image.free();
 
-            if(reports[maxIndex].center_mass_x_normalized > .05)
+            if(reports[maxIndex].center_mass_x_normalized < -.05)
                 return -1;
-            else if(reports[maxIndex].center_mass_x_normalized < .05)
+            else if(reports[maxIndex].center_mass_x_normalized > .05)
                 return 1;
             else
                 return 0;

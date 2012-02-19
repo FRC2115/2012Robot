@@ -2,6 +2,7 @@ package Jordan.bau5.FRC2115;
 
 import Jordan.bau5.FRC2115.commands.DeployPlunger;
 import Jordan.bau5.FRC2115.commands.ExtendArm;
+import Jordan.bau5.FRC2115.commands.RetractArm;
 import Jordan.bau5.FRC2115.commands.RollRoller;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -18,7 +19,8 @@ public class OI
     public OI()
     {
         plungerButton.whenPressed(new DeployPlunger(0.5));
-        bridgeButton.whenPressed(new ExtendArm(0.5));
+        bridgeButton.whenPressed(new ExtendArm(1.0, 1.0));
+        bridgeButton.whenReleased(new RetractArm(1.0, 1.0));
         rollerButton.whileHeld(new RollRoller());
     }
 }

@@ -12,7 +12,7 @@ public class Camera
          cc.addCriteria(MeasurementType.IMAQ_MT_BOUNDING_RECT_WIDTH, 40, 400, false);
     }
 
-    public void processImage()
+    public int processImage()
     {
         if(!camera.freshImage())
             image = camera.getImage();
@@ -35,11 +35,11 @@ public class Camera
 	}
 
 	if(reports[maxIndex].center_mass_x_normalized() > .05)
-	    //Tell drive to turn left at 1/2 speed
+	    return -1;
 	else if(reports[maxIndex].center_mass_x_normalized() < .05)
-	    //Tell drive to turn right at 1/2 speed
+	    return 1;
 	else
-	    //Allow driving forwards & backwards w/ 1 joystick
+	    return 0;
 
         filteredImage.free();
 	convexHullImage.free();

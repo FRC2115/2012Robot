@@ -15,7 +15,7 @@ public class OI
     public Joystick jLeftWheel = jGamepad;
     public int leftAxis = 2;
     public Joystick jRightWheel = jGamepad;
-    public int rightAxis = 4;
+    public int rightAxis = 3;
     public Joystick jShootSetter = jAux;
     public int shootSetAxis = 3;
     

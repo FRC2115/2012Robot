@@ -19,8 +19,8 @@ public class OI
     public OI()
     {
         plungerButton.whenPressed(new DeployPlunger(0.5));
-        bridgeButton.whenPressed(new ExtendArm(1.0, 1.0));
-        bridgeButton.whenReleased(new RetractArm(1.0, 1.0));
+        bridgeButton.whenPressed(new ExtendArm(2.5, 2.5));
+        bridgeButton.whenReleased(new RetractArm(2.5, 2.5));
         rollerButton.whileHeld(new RollRoller());
     }
 }

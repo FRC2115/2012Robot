@@ -22,8 +22,8 @@ public class OI
         bridgeButton = new JoystickButton(j1, 2);
         rollerButton = new JoystickButton(j1, 3);
         autoAim = new JoystickButton(j2, 3);
-        plungerButton.whenPressed(new DeployPlunger(500));
-        bridgeButton.whenPressed(new LowerArm(500));
+        plungerButton.whenPressed(new DeployPlunger(0.5));
+        bridgeButton.whenPressed(new LowerArm(0.5));
         rollerButton.whileHeld(new RollRoller());
         autoAim.whileHeld(new AutoAlign());
     }

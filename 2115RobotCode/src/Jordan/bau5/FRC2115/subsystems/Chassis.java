@@ -14,7 +14,6 @@ public class Chassis extends Subsystem
     {
         drive = new RobotDrive(RobotMap.leftDriveMotor, 
                 RobotMap.rightDriveMotor);
-        drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         drive.setSafetyEnabled(false);
     }
     

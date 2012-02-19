@@ -6,11 +6,14 @@ package Jordan.bau5.FRC2115;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public class RobotMap {
+public class RobotMap
+{
     public static final int leftDriveMotor = 1, 
             rightDriveMotor = 2, 
             shooterMotor = 3, 
             rollerMotor = 4,
             solenoidChannel = 1,
-            armSolenoidChannel = 2;
+            armSolenoidChannel = 2,
+            pressureSwitchChannel = 1,
+            compressorRelayChannel = 1;
 }

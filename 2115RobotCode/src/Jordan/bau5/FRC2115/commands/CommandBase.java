@@ -1,6 +1,7 @@
 package Jordan.bau5.FRC2115.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.BridgeArm;
@@ -9,10 +10,11 @@ import Jordan.bau5.FRC2115.subsystems.Plunger;
 import Jordan.bau5.FRC2115.subsystems.Roller;
 import Jordan.bau5.FRC2115.subsystems.Shooter;
 import Jordan.bau5.FRC2115.subsystems.Camera;
+import Jordan.bau5.FRC2115.RobotMap;
 
 public abstract class CommandBase extends Command
 {
-    // Create a single static instance of all of your subsystems
+    //Create a single static instance of all of your subsystems
     public static OI oi;
     public static Chassis chassis  = new Chassis();
     public static Plunger plunger = new Plunger();
@@ -20,6 +22,11 @@ public abstract class CommandBase extends Command
     public static BridgeArm arm = new BridgeArm();
     public static Roller roller = new Roller();
     public static Camera camera = new Camera();
+    
+    //Simpler to instantiate here rather than making a subsystem
+    public static Compressor compressor = new Compressor(
+            RobotMap.pressureSwitchChannel,
+            RobotMap.compressorRelayChannel);
 
     public static void init()
     {
@@ -29,6 +36,9 @@ public abstract class CommandBase extends Command
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
         oi = new OI();
+        
+        //Start our compressor (permanently)
+        compressor.start();
         
         //Might be nice to see data on the SmartDashboard if we ever use it
         SmartDashboard.putData(chassis);

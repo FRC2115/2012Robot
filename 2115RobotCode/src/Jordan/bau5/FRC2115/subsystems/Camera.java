@@ -12,6 +12,12 @@ import edu.wpi.first.wpilibj.image.ParticleAnalysisReport;
 
 public class Camera extends Subsystem
 {
+    //Intensity threshold values
+    public static final int lowerI = 172;
+    public static final int upperI = 255;
+    public static final int rmSmallIters = 8;
+    //Center of mass x threshold
+    public static final double xThresh = .05;
     private AxisCamera camera;
     private ColorImage image;
     private CriteriaCollection cc;
@@ -30,12 +36,20 @@ public class Camera extends Subsystem
         {
             if(!camera.freshImage())
                 image = camera.getImage();
-            BinaryImage thresholdImage = image.thresholdHSL(0, 255, 0, 255, 165, 255);
-            BinaryImage bigObjectsImage = thresholdImage.removeSmallObjects(false, 2);
-            BinaryImage convexHullImage = bigObjectsImage.convexHull(false);
-            BinaryImage filteredImage = convexHullImage.particleFilter(cc);
+            BinaryImage thresholdImage = image.thresholdHSI(0, 255, 0, 255, lowerI, upperI);
+            BinaryImage convexHullImage = thresholdImage.convexHull(false);
+            BinaryImage bigObjectsImage = convexHullImage.removeSmallObjects(false, 7);
+            /*
+             * BinaryImage bigObjectsImage = thresholdImage();
+             * while(bigObjectsImage.getNumberParticles() > 4)
+             *     bigObjectsImage = bigObjectsImage.removeSmallObjects(false, 1);
+             *
+             * I feel like this is a better way of doing the same thing as is
+             * uncommented above, but I am worried that I don't see it in any
+             * example code or even other teams' code.
+             */
 
-            ParticleAnalysisReport[] reports = filteredImage.getOrderedParticleAnalysisReports(4);
+            ParticleAnalysisReport[] reports = bigObjectsImage.getOrderedParticleAnalysisReports(4);
 
             int maxIndex = 0;
             double maxVal = -99;
@@ -48,15 +62,14 @@ public class Camera extends Subsystem
                 }
             }
 
-            filteredImage.free();
-            convexHullImage.free();
             bigObjectsImage.free();
+            convexHullImage.free();
             thresholdImage.free();
             image.free();
 
-            if(reports[maxIndex].center_mass_x_normalized < -.05)
+            if(reports[maxIndex].center_mass_x_normalized < -1 * xThresh)
                 return -1;
-            else if(reports[maxIndex].center_mass_x_normalized > .05)
+            else if(reports[maxIndex].center_mass_x_normalized > xThresh)
                 return 1;
             else
                 return 0;

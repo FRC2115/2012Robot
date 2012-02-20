@@ -21,9 +21,9 @@ public class AutoAlign extends CommandBase
         int processResult = camera.processImage();
         
         if(processResult == -1)
-	    chassis.drive.tankDrive(.5, -.5);
-	else if(processResult == 1)
 	    chassis.drive.tankDrive(-.5, .5);
+	else if(processResult == 1)
+	    chassis.drive.tankDrive(.5, -.5);
         else
             finished = true; //met the threshold
     }

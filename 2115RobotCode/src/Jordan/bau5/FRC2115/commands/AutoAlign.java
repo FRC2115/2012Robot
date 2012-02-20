@@ -18,10 +18,7 @@ public class AutoAlign extends CommandBase
     {
         int processResult = camera.processImage();
         
-        if (processResult == 0)
-            chassis.driveWithJoystick(oi.jLeftWheel, oi.leftAxis,
-                    oi.jLeftWheel, oi.leftAxis);
-        else if(processResult == -1)
+        if(processResult == -1)
 	    chassis.drive.tankDrive(.5, -.5);
 	else if(processResult == 1)
 	    chassis.drive.tankDrive(-.5, .5);

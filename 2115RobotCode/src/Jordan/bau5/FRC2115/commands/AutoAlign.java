@@ -16,12 +16,14 @@ public class AutoAlign extends CommandBase
 
     public void execute()
     {
-	if(camera.processImage() == 0)
-	    chassis.driveWithJoystick(oi.jLeftWheel, oi.leftAxis,
+        int processResult = camera.processImage();
+        
+        if (processResult == 0)
+            chassis.driveWithJoystick(oi.jLeftWheel, oi.leftAxis,
                     oi.jLeftWheel, oi.leftAxis);
-	else if(camera.processImage() == -1)
+        else if(processResult == -1)
 	    chassis.drive.tankDrive(.5, -.5);
-	else if(camera.processImage() == 1)
+	else if(processResult == 1)
 	    chassis.drive.tankDrive(-.5, .5);
     }
 

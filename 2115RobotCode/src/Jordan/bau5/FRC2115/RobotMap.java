@@ -16,5 +16,6 @@ public class RobotMap
             armOutSolenoidChannel = 2,
             armDownSolenoidChannel = 3,
             pressureSwitchChannel = 1,
-            compressorRelayChannel = 1;
+            compressorRelayChannel = 1,
+            tiltGyroChannel = 2;
 }

@@ -2,6 +2,7 @@ package Jordan.bau5.FRC2115.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import Jordan.bau5.FRC2115.OI;
 import Jordan.bau5.FRC2115.subsystems.BridgeArm;
@@ -25,6 +26,7 @@ public abstract class CommandBase extends Command
     public static Compressor compressor = new Compressor(
             RobotMap.pressureSwitchChannel,
             RobotMap.compressorRelayChannel);
+    public static Gyro tiltGyro = new Gyro(RobotMap.tiltGyroChannel);
 
     public static void init()
     {

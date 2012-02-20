@@ -4,6 +4,8 @@ import Jordan.bau5.FRC2115.commands.CommandBase;
 
 public class AutoAlign extends CommandBase
 {
+    private boolean finished = false;
+    
     public AutoAlign()
     {
 	requires(camera);
@@ -22,11 +24,13 @@ public class AutoAlign extends CommandBase
 	    chassis.drive.tankDrive(.5, -.5);
 	else if(processResult == 1)
 	    chassis.drive.tankDrive(-.5, .5);
+        else
+            finished = true; //met the threshold
     }
 
     protected boolean isFinished()
     {
-        return false;
+        return finished;
     }
 
     protected void end()

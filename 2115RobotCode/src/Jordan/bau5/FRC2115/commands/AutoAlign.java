@@ -1,17 +1,28 @@
 package Jordan.bau5.FRC2115.commands;
 
 import Jordan.bau5.FRC2115.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.PIDCommand;
 
-public class AutoAlign extends CommandBase
-{
-    private static final double X_THRESHOLD = 0.05;
-    
-    private boolean finished = false;
-    
+public class AutoAlign extends PIDCommand
+{   
     public AutoAlign()
     {
-	requires(camera);
-	requires(chassis);
+        super("AutoAlign", 0.1, 0.1, 0.1);
+        
+	requires(CommandBase.camera);
+	requires(CommandBase.chassis);
+        
+        setSetpoint(0.0);
+    }
+    
+    protected double returnPIDInput()
+    {
+        return CommandBase.camera.findOffsetFromX();
+    }
+
+    protected void usePIDOutput(double output)
+    {
+        CommandBase.chassis.drive.tankDrive(output, -output);
     }
 
     public void initialize()
@@ -20,19 +31,11 @@ public class AutoAlign extends CommandBase
 
     public void execute()
     {
-        double offset = camera.findOffsetFromX();
-        
-        if(offset < -X_THRESHOLD)
-	    chassis.drive.tankDrive(-.5, .5);
-	else if(offset > X_THRESHOLD)
-	    chassis.drive.tankDrive(.5, -.5);
-        else
-            finished = true; //met the threshold
     }
 
     protected boolean isFinished()
     {
-        return finished;
+        return false;
     }
 
     protected void end()

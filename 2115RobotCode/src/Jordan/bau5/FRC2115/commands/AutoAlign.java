@@ -4,6 +4,8 @@ import Jordan.bau5.FRC2115.commands.CommandBase;
 
 public class AutoAlign extends CommandBase
 {
+    private static final double X_THRESHOLD = 0.05;
+    
     private boolean finished = false;
     
     public AutoAlign()
@@ -18,11 +20,11 @@ public class AutoAlign extends CommandBase
 
     public void execute()
     {
-        int processResult = camera.processImage();
+        double offset = camera.findOffsetFromX();
         
-        if(processResult == -1)
+        if(offset < -X_THRESHOLD)
 	    chassis.drive.tankDrive(-.5, .5);
-	else if(processResult == 1)
+	else if(offset > X_THRESHOLD)
 	    chassis.drive.tankDrive(.5, -.5);
         else
             finished = true; //met the threshold

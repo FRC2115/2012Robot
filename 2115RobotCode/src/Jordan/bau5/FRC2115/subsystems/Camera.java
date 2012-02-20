@@ -16,8 +16,7 @@ public class Camera extends Subsystem
     public static final int lowerI = 172;
     public static final int upperI = 255;
     public static final int rmSmallIters = 8;
-    //Center of mass x threshold
-    public static final double xThresh = .05;
+    
     private AxisCamera camera;
     private ColorImage image;
     private CriteriaCollection cc;
@@ -30,7 +29,9 @@ public class Camera extends Subsystem
          cc.addCriteria(MeasurementType.IMAQ_MT_BOUNDING_RECT_WIDTH, 40, 400, false);
     }
 
-    public int processImage()
+    //Returns how far the center of the camera is from the highest target
+    //in the x dimension. Returns value between -1.0 and 1.0
+    public double findOffsetFromX()
     {
         try
         {
@@ -67,12 +68,7 @@ public class Camera extends Subsystem
             thresholdImage.free();
             image.free();
 
-            if(reports[maxIndex].center_mass_x_normalized < -1 * xThresh)
-                return -1;
-            else if(reports[maxIndex].center_mass_x_normalized > xThresh)
-                return 1;
-            else
-                return 0;
+            return reports[maxIndex].center_mass_x_normalized;
         }
         catch(Exception e)
         {

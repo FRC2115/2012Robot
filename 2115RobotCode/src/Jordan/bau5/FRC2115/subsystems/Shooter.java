@@ -5,6 +5,7 @@ import Jordan.bau5.FRC2115.commands.ShootWithJoyStick;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Shooter extends Subsystem 
 {
@@ -20,6 +21,9 @@ public class Shooter extends Subsystem
         double joyStickValue = jSet.getRawAxis(axis);
         //Reverse axis because our joystick makes the top -1
         //Then change the range from -1 -> 1 to 0 -> 1
-        j.set(((-1 * joyStickValue) + 1) / 2);
+        double spinSpeed = ((-1 * joyStickValue) + 1) / 2;
+        
+        SmartDashboard.putDouble("Shooter Speed", spinSpeed);
+        j.set(spinSpeed);
     }
 }

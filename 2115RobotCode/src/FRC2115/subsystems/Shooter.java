@@ -1,7 +1,7 @@
-package Jordan.bau5.FRC2115.subsystems;
+package FRC2115.subsystems;
 
-import Jordan.bau5.FRC2115.RobotMap;
-import Jordan.bau5.FRC2115.commands.ShootWithJoyStick;
+import FRC2115.RobotMap;
+import FRC2115.commands.ShootWithJoyStick;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;

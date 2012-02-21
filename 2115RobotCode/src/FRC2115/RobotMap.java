@@ -1,4 +1,4 @@
-package Jordan.bau5.FRC2115;
+package FRC2115;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

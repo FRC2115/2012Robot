@@ -1,9 +1,9 @@
-package Jordan.bau5.FRC2115;
+package FRC2115;
 
-import Jordan.bau5.FRC2115.commands.DeployPlunger;
-import Jordan.bau5.FRC2115.commands.ExtendArm;
-import Jordan.bau5.FRC2115.commands.RetractArm;
-import Jordan.bau5.FRC2115.commands.RollRoller;
+import FRC2115.commands.DeployPlunger;
+import FRC2115.commands.ExtendArm;
+import FRC2115.commands.RetractArm;
+import FRC2115.commands.RollRoller;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 

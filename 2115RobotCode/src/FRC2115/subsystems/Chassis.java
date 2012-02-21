@@ -1,10 +1,10 @@
-package Jordan.bau5.FRC2115.subsystems;
+package FRC2115.subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import Jordan.bau5.FRC2115.RobotMap;
-import Jordan.bau5.FRC2115.commands.DriveWithJoystick;
+import FRC2115.RobotMap;
+import FRC2115.commands.DriveWithJoystick;
 
 public class Chassis extends Subsystem 
 {

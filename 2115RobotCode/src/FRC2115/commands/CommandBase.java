@@ -1,15 +1,15 @@
-package Jordan.bau5.FRC2115.commands;
+package FRC2115.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import Jordan.bau5.FRC2115.OI;
-import Jordan.bau5.FRC2115.subsystems.BridgeArm;
-import Jordan.bau5.FRC2115.subsystems.Chassis;
-import Jordan.bau5.FRC2115.subsystems.Plunger;
-import Jordan.bau5.FRC2115.subsystems.Roller;
-import Jordan.bau5.FRC2115.subsystems.Shooter;
-import Jordan.bau5.FRC2115.RobotMap;
+import FRC2115.OI;
+import FRC2115.subsystems.BridgeArm;
+import FRC2115.subsystems.Chassis;
+import FRC2115.subsystems.Plunger;
+import FRC2115.subsystems.Roller;
+import FRC2115.subsystems.Shooter;
+import FRC2115.RobotMap;
 
 public abstract class CommandBase extends Command
 {

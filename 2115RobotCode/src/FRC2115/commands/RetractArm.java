@@ -1,6 +1,6 @@
-package Jordan.bau5.FRC2115.commands;
+package FRC2115.commands;
 
-import Jordan.bau5.FRC2115.subsystems.BridgeArm;
+import FRC2115.subsystems.BridgeArm;
 import edu.wpi.first.wpilibj.Timer;
 
 public class RetractArm extends CommandBase

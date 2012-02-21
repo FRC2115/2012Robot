@@ -1,6 +1,6 @@
 MIDlet-Name: 2115RobotCode
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
-MIDlet-1: MainRobotClass, , Jordan.bau5.FRC2115.MainRobotClass
+MIDlet-1: MainRobotClass, ,  FRC2115.MainRobotClass
 MicroEdition-Profile: IMP-1.0
 MicroEdition-Configuration: CLDC-1.1

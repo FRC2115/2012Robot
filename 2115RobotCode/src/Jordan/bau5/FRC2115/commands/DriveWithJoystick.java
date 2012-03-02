@@ -18,7 +18,7 @@ public class DriveWithJoystick extends CommandBase
         double leftAxis = oi.jLeftWheel.getRawAxis(oi.leftAxis);
         double rightAxis = oi.jRightWheel.getRawAxis(oi.rightAxis);
         
-        chassis.driveWithJoystick(leftAxis, rightAxis);
+        chassis.driveWithJoystick(jMod(leftAxis), jMod(rightAxis));
     }
 
     protected boolean isFinished()
@@ -32,5 +32,19 @@ public class DriveWithJoystick extends CommandBase
 
     protected void interrupted()
     {
+    }
+    
+    public static double jMod(double jVal)
+    {
+        boolean isNeg = false;
+	if(jVal < 0)
+	{
+	    isNeg = true;
+	    jVal *= -1;
+	}
+
+	double modVal = (Math.atan(Math.PI*(jVal - .5))/2.009 + .5);
+	if(isNeg) { return modVal*-1; }
+	else      { return modVal;    }
     }
 }

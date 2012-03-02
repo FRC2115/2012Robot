@@ -32,10 +32,9 @@ public class Chassis extends Subsystem
         drive.tankDrive(-1, 1);
     }
     
-    public void driveWithJoystick(Joystick leftWheel, int leftAxis,
-            Joystick rightWheel, int rightAxis)
+    public void driveWithJoystick(double leftAxis, double rightAxis)
     {
-        drive.tankDrive(leftWheel, leftAxis, rightWheel, rightAxis);
+        drive.tankDrive(leftAxis, rightAxis);
     }
     
     public void initDefaultCommand() 

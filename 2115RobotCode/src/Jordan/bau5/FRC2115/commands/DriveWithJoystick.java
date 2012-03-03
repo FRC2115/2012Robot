@@ -43,7 +43,7 @@ public class DriveWithJoystick extends CommandBase
 	    jVal *= -1;
 	}
 
-	double modVal = (Math.atan(Math.PI*(jVal - .5))/2.009 + .5);
+	double modVal = (-.5*Math.cos(Math.PI*jVal) + .5);
 	if(isNeg) { return modVal*-1; }
 	else      { return modVal;    }
     }

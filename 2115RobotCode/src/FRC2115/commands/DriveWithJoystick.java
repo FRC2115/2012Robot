@@ -36,12 +36,12 @@ public class DriveWithJoystick extends CommandBase
     
     public static double jMod(double jVal)
     {
-	double modVal = (-.5*Math.cos(Math.PI*jVal) + .5);
-        
-	if(jVal < 0)
+        double modVal = (-.5*Math.cos(Math.PI*jVal) + .5);
+
+        if(jVal < 0)
             //modVal is always positive; make it negative if axis was negative
             modVal *= -1;
-        
+
         return modVal;
     }
 }

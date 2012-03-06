@@ -13,9 +13,9 @@ import edu.wpi.first.wpilibj.image.ParticleAnalysisReport;
 public class Camera extends Subsystem
 {
     //Intensity threshold values
-    public static final int lowerI = 172;
-    public static final int upperI = 255;
-    public static final int rmSmallIters = 8;
+    public static final int lowerR = 200;
+    public static final int upperR = 255;
+    public static final int rmSmallIters = 2;
     //Center of mass x threshold
     public static final double xThresh = .05;
     private AxisCamera camera;
@@ -36,9 +36,9 @@ public class Camera extends Subsystem
         {
             if(!camera.freshImage())
                 image = camera.getImage();
-            BinaryImage thresholdImage = image.thresholdHSI(0, 255, 0, 255, lowerI, upperI);
-            BinaryImage convexHullImage = thresholdImage.convexHull(false);
-            BinaryImage bigObjectsImage = convexHullImage.removeSmallObjects(false, 7);
+            BinaryImage thresholdImage = image.thresholdRGB(0, 245, 0, 245, lowerI, upperI);
+            BinaryImage bigObjectsImage = thresholdImage.removeSmallObjects(false, rmSmallIters);
+            BinaryImage convexHullImage = bigObjectsImage.convexHull(false);
             /*
              * BinaryImage bigObjectsImage = thresholdImage();
              * while(bigObjectsImage.getNumberParticles() > 4)

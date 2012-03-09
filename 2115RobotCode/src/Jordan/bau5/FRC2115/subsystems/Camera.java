@@ -67,6 +67,9 @@ public class Camera extends Subsystem
                     }
                 }
 
+                System.out.println("X: " + reports[maxIndex].center_mass_x_normalized +
+                        "Y: " + reports[maxIndex].center_mass_y_normalized);
+                
                 im5.free();
                 im4.free();
                 im3.free();

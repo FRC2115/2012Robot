@@ -67,8 +67,25 @@ public class Camera extends Subsystem
                     }
                 }
 
-                System.out.println("X: " + reports[maxIndex].center_mass_x_normalized +
-                        "Y: " + reports[maxIndex].center_mass_y_normalized);
+                int returnVal;
+                
+                if(reports.length > 0)
+                {
+                    System.out.println("X: " + reports[maxIndex].center_mass_x_normalized +
+                            "Y: " + reports[maxIndex].center_mass_y_normalized);
+
+                    if(reports[maxIndex].center_mass_x_normalized < -1 * xThresh)
+                        returnVal = -1;
+                    else if(reports[maxIndex].center_mass_x_normalized > xThresh)
+                        returnVal = 1;
+                    else
+                        returnVal = 0;
+                }
+                else
+                {
+                    System.out.println("No target found.");
+                    returnVal = 0;
+                }
                 
                 im5.free();
                 im4.free();
@@ -77,12 +94,7 @@ public class Camera extends Subsystem
                 im1.free();
                 image.free();
 
-                if(reports[maxIndex].center_mass_x_normalized < -1 * xThresh)
-                    return -1;
-                else if(reports[maxIndex].center_mass_x_normalized > xThresh)
-                    return 1;
-                else
-                    return 0;
+                return returnVal;
             }
             catch(Exception e)
             {

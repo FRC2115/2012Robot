@@ -1,10 +1,6 @@
 package Jordan.bau5.FRC2115;
 
-import Jordan.bau5.FRC2115.commands.DeployPlunger;
-import Jordan.bau5.FRC2115.commands.ExtendArm;
-import Jordan.bau5.FRC2115.commands.RetractArm;
-import Jordan.bau5.FRC2115.commands.RollRoller;
-import Jordan.bau5.FRC2115.commands.AutoAlign;
+import Jordan.bau5.FRC2115.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -23,7 +19,9 @@ public class OI
     public JoystickButton plungerButton = new JoystickButton(jGamepad, 6),
             bridgeButton = new JoystickButton(jGamepad, 9),
             rollerButton = new JoystickButton(jGamepad, 10),
-            autoAim = new JoystickButton(jAux, 3);
+            autoAim = new JoystickButton(jAux, 3),
+            fasterButton = new JoystickButton(jAux, 11),
+            slowerButton = new JoystickButton(jAux, 10);
     
     public OI()
     {
@@ -32,5 +30,7 @@ public class OI
         bridgeButton.whenReleased(new RetractArm(2.5, 2.5));
         rollerButton.whileHeld(new RollRoller());
         autoAim.whileHeld(new AutoAlign());
+        fasterButton.whenPressed(new IncreaseShooterSpeed());
+        slowerButton.whenPressed(new DecreaseShooterSpeed());
     }
 }

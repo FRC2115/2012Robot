@@ -22,4 +22,13 @@ public class Shooter extends Subsystem
         //Then change the range from -1 -> 1 to 0 -> 1
         j.set(((-1 * joyStickValue) + 1) / 2);
     }
+    
+    //for testing distance v. shooter speed
+    public void spinWithButton(int button)
+    {
+        if(button == 11)
+            j.set(j.get() + .05);
+        if(button == 10)
+            j.set(j.get() - .05);
+    }
 }

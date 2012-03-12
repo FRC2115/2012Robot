@@ -20,7 +20,7 @@ public class Camera extends Subsystem
     public static final float minRatio = (float) 1.0;
     public static final float maxRatio = (float) 1.35;
     //Center of mass x threshold
-    public static final double xThresh = .05;
+    public static final double xThresh = .1;
     private AxisCamera camera;
     private ColorImage image;
     private CriteriaCollection ratioc;
@@ -39,9 +39,9 @@ public class Camera extends Subsystem
             try
             {
                 image = camera.getImage();
-                BinaryImage im1 = image.thresholdRGB(0, 255, 0, 255, lowerR, upperR);
+                BinaryImage im1 = image.thresholdRGB(lowerR, upperR, 0, 255, 0, 255);
                 BinaryImage im2 = im1.removeSmallObjects(true, iters1);
-                BinaryImage im3 = im2.convexHull(false);
+                BinaryImage im3 = im2.convexHull(true);
                 BinaryImage im4 = im3.particleFilter(ratioc);
                 BinaryImage im5 = im4.removeSmallObjects(true, iters2);
                 /*
@@ -57,10 +57,10 @@ public class Camera extends Subsystem
                 ParticleAnalysisReport[] reports = im5.getOrderedParticleAnalysisReports(4);
 
                 int maxIndex = 0;
-                double maxVal = -1.0;
+                double maxVal = 1.0;
                 for(int i = 0; i < reports.length; i++)
                 {
-                    if(reports[i].center_mass_y_normalized > maxVal)
+                    if(reports[i].center_mass_y_normalized < maxVal)
                     {
                         maxIndex = i;
                         maxVal = reports[i].center_mass_y_normalized;

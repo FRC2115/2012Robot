@@ -1,7 +1,5 @@
 package Jordan.bau5.FRC2115.commands;
 
-import Jordan.bau5.FRC2115.commands.CommandBase;
-
 public class AutoAlign extends CommandBase
 {
     private boolean finished = false;
@@ -24,8 +22,12 @@ public class AutoAlign extends CommandBase
 	    chassis.drive.tankDrive(-.5, .5);
 	else if(processResult == 1)
 	    chassis.drive.tankDrive(.5, -.5);
-        else
+        else if(processResult == 0)
             finished = true; //met the threshold
+        else
+        {
+            throw new IllegalStateException("The processImage method has returned: "+processResult);
+        }
     }
 
     protected boolean isFinished()

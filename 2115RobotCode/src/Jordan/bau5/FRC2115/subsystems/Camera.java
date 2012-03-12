@@ -11,14 +11,9 @@ import edu.wpi.first.wpilibj.image.ParticleAnalysisReport;
 public class Camera extends Subsystem
 {
     //Red threshold values
-    public static final int lowerR = 232;
-    public static final int upperR = 255;
-    //Number of times to iterate through removeSmallObjects
-    public static final int iters1 = 2;
-    public static final int iters2 = 6;
+    public static final int lowerR = 232, upperR = 255, iters1 = 2, iters2 = 6;
     //Min and max ratio of width to height of equivalent rectangle
-    public static final float minRatio = (float) 1.0;
-    public static final float maxRatio = (float) 1.35;
+    public static final float minRatio = (float) 1.0, maxRatio = (float) 1.35;
     //Center of mass x threshold
     public static final double xThresh = .1;
     private AxisCamera camera;

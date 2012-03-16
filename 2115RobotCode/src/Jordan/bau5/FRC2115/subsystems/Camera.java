@@ -1,5 +1,6 @@
 package Jordan.bau5.FRC2115.subsystems;
 
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.image.BinaryImage;
@@ -16,7 +17,10 @@ public class Camera extends Subsystem
     public static final float minRatio = (float) 1.0, maxRatio = (float) 1.35;
     //Center of mass x threshold
     public static final double xThresh = .1;
+    private int processed = 0;
+    private double usRange = 1;
     private AxisCamera camera;
+    private Ultrasonic us;
     private ColorImage image;
     private CriteriaCollection ratioc;
 
@@ -61,25 +65,23 @@ public class Camera extends Subsystem
                         maxVal = reports[i].center_mass_y_normalized;
                     }
                 }
-
-                int returnVal;
                 
                 if(reports.length > 0)
                 {
                     System.out.println("X: " + reports[maxIndex].center_mass_x_normalized +
                             "Y: " + reports[maxIndex].center_mass_y_normalized);
-
                     if(reports[maxIndex].center_mass_x_normalized < -1 * xThresh)
-                        returnVal = -1;
+                        processed = -1;
                     else if(reports[maxIndex].center_mass_x_normalized > xThresh)
-                        returnVal = 1;
+                        processed = 1;
                     else
-                        returnVal = 0;
+                        processed = 0;
                 }
                 else
                 {
                     System.out.println("No target found.");
-                    returnVal = 0;
+                    processed = 0;
+
                 }
                 
                 im5.free();
@@ -89,7 +91,7 @@ public class Camera extends Subsystem
                 im1.free();
                 image.free();
 
-                return returnVal;
+                return processed;
             }
             catch(Exception e)
             {
@@ -99,7 +101,17 @@ public class Camera extends Subsystem
                 return 0;
             }
         }
-        return 0;
+        return processed;
+    }
+    
+    public double range()
+    {
+        if(us.isRangeValid())
+        {
+            usRange = us.getRangeInches();
+        }
+        System.out.println("Range: " + usRange);
+        return usRange;
     }
 
     protected void initDefaultCommand()

@@ -21,7 +21,8 @@ public class OI
             rollerButton = new JoystickButton(jGamepad, 10),
             autoAim = new JoystickButton(jAux, 3),
             fasterButton = new JoystickButton(jAux, 11),
-            slowerButton = new JoystickButton(jAux, 10);
+            slowerButton = new JoystickButton(jAux, 10),
+            shootButton = new JoystickButton(jGamepad, 8);
     
     public OI()
     {
@@ -32,5 +33,6 @@ public class OI
         autoAim.whileHeld(new AutoAlign());
         fasterButton.whenPressed(new IncreaseShooterSpeed());
         slowerButton.whenPressed(new DecreaseShooterSpeed());
+        shootButton.whileHeld(new Shoot());
     }
 }

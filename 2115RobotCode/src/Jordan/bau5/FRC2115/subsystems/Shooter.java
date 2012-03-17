@@ -2,6 +2,7 @@ package Jordan.bau5.FRC2115.subsystems;
 
 import Jordan.bau5.FRC2115.RobotMap;
 import Jordan.bau5.FRC2115.commands.ShootWithJoyStick;
+import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -9,6 +10,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Shooter extends Subsystem 
 {
     Jaguar j = new Jaguar(RobotMap.shooterMotor);
+    private AnalogChannel us = new AnalogChannel(1, 1);
+
     
     public void initDefaultCommand() 
     {
@@ -30,5 +33,16 @@ public class Shooter extends Subsystem
             j.set(j.get() + .05);
         if(button == 10)
             j.set(j.get() - .05);
+    }
+    
+    public void actualShoot()
+    {
+        range();
+    }
+    
+    public void range()
+    {
+        int usRange = us.getValue();
+        System.out.println("Range: " + usRange);
     }
 }

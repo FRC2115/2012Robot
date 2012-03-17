@@ -1,6 +1,5 @@
 package Jordan.bau5.FRC2115.subsystems;
 
-import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.image.BinaryImage;
@@ -18,9 +17,7 @@ public class Camera extends Subsystem
     //Center of mass x threshold
     public static final double xThresh = .1;
     private int processed = 0;
-    private double usRange = 1;
     private AxisCamera camera;
-    private Ultrasonic us;
     private ColorImage image;
     private CriteriaCollection ratioc;
 
@@ -102,16 +99,6 @@ public class Camera extends Subsystem
             }
         }
         return processed;
-    }
-    
-    public double range()
-    {
-        if(us.isRangeValid())
-        {
-            usRange = us.getRangeInches();
-        }
-        System.out.println("Range: " + usRange);
-        return usRange;
     }
 
     protected void initDefaultCommand()

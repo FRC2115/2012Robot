@@ -17,7 +17,6 @@ public class AutoAlign extends CommandBase
     public void execute()
     {
         int processResult = camera.processImage();
-        double distance = camera.range();
         
         if(processResult == -1)
 	    chassis.drive.tankDrive(-.5, .5);

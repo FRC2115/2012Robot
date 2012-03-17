@@ -1,38 +1,25 @@
 package FRC2115.commands;
 
 import FRC2115.subsystems.BridgeArm;
-import edu.wpi.first.wpilibj.Timer;
 
 public class RetractArm extends CommandBase
 {
-    private Timer m_timer;
-    private double m_upTime;
     private double m_timeout;
     
-    public RetractArm(double upTime, double inTime) 
+    public RetractArm(double time)
     {
         requires(arm);
-        m_timer = new Timer();
-        
-        m_upTime = upTime;
-        //Timeout will be when BOTH phases finish
-        m_timeout = upTime + inTime;
+        m_timeout = time;
     }
 
     protected void initialize() 
     {
-        m_timer.reset();
-        m_timer.start();
         setTimeout(m_timeout);
     }
 
     protected void execute() 
     {
-        arm.downRetract();
-        
-        if(m_timer.get() >= m_upTime)
-            //Should be up by now, so retract completely
-            arm.outRetract();
+        arm.retract();
     }
 
     protected boolean isFinished()
@@ -42,9 +29,11 @@ public class RetractArm extends CommandBase
 
     protected void end()
     {
+        arm.stop();
     }
 
     protected void interrupted()
     {
+        end();
     }
 }

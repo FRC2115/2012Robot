@@ -1,41 +1,35 @@
 package FRC2115.subsystems;
 
 import FRC2115.RobotMap;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class BridgeArm extends Subsystem
 {
-    private Solenoid solenoidOut;
-    private Solenoid solenoidDown;
+    private final double speed = 0.3;
+    private Jaguar armMotor;
     
     public BridgeArm()
     {
-        solenoidOut = new Solenoid(RobotMap.armOutSolenoidChannel);
-        solenoidDown = new Solenoid(RobotMap.armDownSolenoidChannel);
+        armMotor = new Jaguar(RobotMap.armMotor);
     }
     
     public void initDefaultCommand()
     {
     }
     
-    public void outExtend()
+    public void extend()
     {
-        solenoidOut.set(true);
+        armMotor.set(speed);
     }
     
-    public void outRetract()
+    public void retract()
     {
-        solenoidOut.set(false);
+        armMotor.set(-speed);
     }
     
-    public void downExtend()
+    public void stop()
     {
-        solenoidDown.set(true);
-    }
-    
-    public void downRetract()
-    {
-        solenoidDown.set(false);
+        armMotor.set(0);
     }
 }

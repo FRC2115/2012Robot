@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import FRC2115.commands.CommandBase;
+import FRC2115.commands.Autonomous;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,6 +29,7 @@ public class MainRobotClass extends IterativeRobot
 
     public void autonomousInit()
     {
+        Scheduler.getInstance().add(new Autonomous());
     }
 
     public void autonomousPeriodic()

@@ -31,8 +31,8 @@ public class OI
         bridgeButton.whenReleased(new RetractArm(2.5, 2.5));
         rollerButton.whileHeld(new RollRoller());
         autoAim.whileHeld(new AutoAlign());
-        fasterButton.whenPressed(new IncreaseShooterSpeed());
-        slowerButton.whenPressed(new DecreaseShooterSpeed());
+        fasterButton.whileHeld(new IncreaseShooterSpeed());
+        slowerButton.whileHeld(new DecreaseShooterSpeed());
         shootButton.whileHeld(new Shoot());
     }
 }

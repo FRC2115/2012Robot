@@ -11,11 +11,12 @@ public class Shooter extends Subsystem
 {
     Jaguar j = new Jaguar(RobotMap.shooterMotor);
     private AnalogChannel us = new AnalogChannel(1, 1);
+    private int step = 0;
 
     
     public void initDefaultCommand() 
     {
-        setDefaultCommand(new ShootWithJoyStick());
+        //setDefaultCommand(new ShootWithJoyStick());
     }
     
     public void spinWithJoystick(Joystick jSet, int axis)
@@ -29,10 +30,12 @@ public class Shooter extends Subsystem
     //for testing distance v. shooter speed
     public void spinWithButton(int button)
     {
-        if(button == 11)
-            j.set(j.get() + .05);
-        if(button == 10)
-            j.set(j.get() - .05);
+        if(step < 20 && button == 11)
+            step++;
+        if(step > -20 && button == 10)
+            step--;
+        j.set(.05 * step);
+        System.out.println(j.get());
     }
     
     public void actualShoot()
@@ -42,7 +45,7 @@ public class Shooter extends Subsystem
     
     public void range()
     {
-        int usRange = us.getValue();
+        int usRange = us.getValue() / 2;
         System.out.println("Range: " + usRange);
     }
 }

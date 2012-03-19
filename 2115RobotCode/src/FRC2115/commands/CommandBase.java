@@ -9,6 +9,7 @@ import FRC2115.subsystems.Chassis;
 import FRC2115.subsystems.Plunger;
 import FRC2115.subsystems.Roller;
 import FRC2115.subsystems.Shooter;
+import FRC2115.subsystems.Camera;
 import FRC2115.RobotMap;
 
 public abstract class CommandBase extends Command
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command
     public static Shooter shooter = new Shooter();
     public static BridgeArm arm = new BridgeArm();
     public static Roller roller = new Roller();
+    public static Camera camera = new Camera();
     
     //Simpler to instantiate here rather than making a subsystem
     public static Compressor compressor = new Compressor(

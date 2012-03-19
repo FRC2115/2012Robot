@@ -25,7 +25,7 @@ public class OI
             autoShootSpeedButton = new JoystickButton(jGamepad, 8),
             bridgeButton = new JoystickButton(jGamepad, 9),
             rollerButton = new JoystickButton(jGamepad, 10),
-            autoAim = new JoystickButton(jAux, 3);
+            autoAimButton = new JoystickButton(jAux, 3);
     
     public OI()
     {
@@ -33,7 +33,7 @@ public class OI
         bridgeButton.whenPressed(new ExtendArm(0.5));
         bridgeButton.whenReleased(new RetractArm(0.5));
         rollerButton.whileHeld(new RollRoller());
-        autoAim.whileHeld(new AutoAlign());
+        autoAimButton.whileHeld(new AutoAlign());
         autoShootSpeedButton.whileHeld(new AutoShooterSpeed());
     }
 }

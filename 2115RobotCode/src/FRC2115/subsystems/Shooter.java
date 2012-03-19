@@ -55,6 +55,8 @@ public class Shooter extends Subsystem
         return usRange;
     }
 
+    //Maps a ultrasonic range (~inches) to a proper shooter PWM output
+    //TEMPORARY IMPLEMENTATION. Needs testing at competition
     public double distanceAdjust(int range)
     {
         return (double)range;

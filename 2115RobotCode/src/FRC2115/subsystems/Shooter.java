@@ -42,7 +42,8 @@ public class Shooter extends Subsystem
         System.out.println(j.get());
     }
     
-    public void actualShoot()
+    //Speed up the shooter based on distance sensor
+    public void useRangeSpeed()
     {
         int range = range();
         j.set(distanceAdjust(range));

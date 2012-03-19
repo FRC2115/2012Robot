@@ -7,7 +7,7 @@ import FRC2115.commands.RollRoller;
 import FRC2115.commands.AutoAlign;
 import FRC2115.commands.IncreaseShooterSpeed;
 import FRC2115.commands.DecreaseShooterSpeed;
-import FRC2115.commands.Shoot;
+import FRC2115.commands.AutoShooterSpeed;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -40,6 +40,6 @@ public class OI
         autoAim.whileHeld(new AutoAlign());
         fasterButton.whileHeld(new IncreaseShooterSpeed());
         slowerButton.whileHeld(new DecreaseShooterSpeed());
-        shootButton.whileHeld(new Shoot());
+        shootButton.whileHeld(new AutoShooterSpeed());
     }
 }

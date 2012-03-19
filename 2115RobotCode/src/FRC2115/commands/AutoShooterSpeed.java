@@ -1,9 +1,9 @@
 package FRC2115.commands;
 
-public class Shoot extends CommandBase
+public class AutoShooterSpeed extends CommandBase
 {
     
-    public Shoot()
+    public AutoShooterSpeed()
     {
         requires(shooter);
     }
@@ -14,7 +14,7 @@ public class Shoot extends CommandBase
 
     protected void execute()
     {
-        shooter.actualShoot();
+        shooter.useRangeSpeed();
     }
 
     protected boolean isFinished()

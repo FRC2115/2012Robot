@@ -7,7 +7,7 @@ public class Autonomous extends CommandGroup
     public Autonomous()
     {
         addSequential(new AutoAlign());
-        addSequential(new Shoot());
-        addSequential(new Shoot());
+        addSequential(new AutoShooterSpeed());
+        addSequential(new AutoShooterSpeed());
     }
 }

@@ -44,12 +44,19 @@ public class Shooter extends Subsystem
     
     public void actualShoot()
     {
-        range();
+        int range = range();
+        j.set(distanceAdjust(range));
     }
     
-    public void range()
+    public int range()
     {
         int usRange = us.getValue() / 2;
         System.out.println("Range: " + usRange);
+        return usRange;
+    }
+
+    public double distanceAdjust(int range)
+    {
+        return (double)range;
     }
 }

@@ -12,12 +12,10 @@ public class Shooter extends Subsystem
 {
     Jaguar j = new Jaguar(RobotMap.shooterMotor);
     private AnalogChannel us = new AnalogChannel(1, 1);
-    private int step = 0;
-
     
     public void initDefaultCommand() 
     {
-        //setDefaultCommand(new ShootWithJoyStick());
+        setDefaultCommand(new ShootWithJoyStick());
     }
     
     public void spinWithJoystick(Joystick jSet, int axis)
@@ -29,17 +27,6 @@ public class Shooter extends Subsystem
         
         SmartDashboard.putDouble("Shooter Speed", spinSpeed);
         j.set(spinSpeed);
-    }
-    
-    //for testing distance v. shooter speed
-    public void spinWithButton(int button)
-    {
-        if(step < 20 && button == 11)
-            step++;
-        if(step > -20 && button == 10)
-            step--;
-        j.set(.05 * step);
-        System.out.println(j.get());
     }
     
     //Speed up the shooter based on distance sensor

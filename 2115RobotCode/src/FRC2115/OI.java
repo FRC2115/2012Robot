@@ -24,12 +24,12 @@ public class OI
     public int shootSetAxis = 3;
     
     public JoystickButton plungerButton = new JoystickButton(jGamepad, 6),
+            autoShootSpeedButton = new JoystickButton(jGamepad, 8),
             bridgeButton = new JoystickButton(jGamepad, 9),
             rollerButton = new JoystickButton(jGamepad, 10),
             autoAim = new JoystickButton(jAux, 3),
             fasterButton = new JoystickButton(jAux, 11),
-            slowerButton = new JoystickButton(jAux, 10),
-            shootButton = new JoystickButton(jGamepad, 8);
+            slowerButton = new JoystickButton(jAux, 10);
     
     public OI()
     {
@@ -40,6 +40,6 @@ public class OI
         autoAim.whileHeld(new AutoAlign());
         fasterButton.whileHeld(new IncreaseShooterSpeed());
         slowerButton.whileHeld(new DecreaseShooterSpeed());
-        shootButton.whileHeld(new AutoShooterSpeed());
+        autoShootSpeedButton.whileHeld(new AutoShooterSpeed());
     }
 }

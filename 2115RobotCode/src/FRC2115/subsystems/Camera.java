@@ -13,7 +13,7 @@ public class Camera extends Subsystem
     //Red threshold values
     public static final int lowerR = 232, upperR = 255, iters1 = 2, iters2 = 6;
     //Min and max ratio of width to height of equivalent rectangle
-    public static final float minRatio = (float) 1.0, maxRatio = (float) 1.35;
+    public static final float minRatio = 1.0f, maxRatio = 1.35f;
     //Center of mass x threshold
     public static final double xThresh = .1;
     private int processed = 0;

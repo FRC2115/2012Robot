@@ -1,12 +1,9 @@
 package FRC2115.subsystems;
 
 import FRC2115.RobotMap;
-import FRC2115.commands.ShootWithJoyStick;
 import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.Jaguar;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Shooter extends Subsystem 
 {
@@ -17,18 +14,6 @@ public class Shooter extends Subsystem
     
     public void initDefaultCommand() 
     {
-        //setDefaultCommand(new ShootWithJoyStick());
-    }
-    
-    public void spinWithJoystick(Joystick jSet, int axis)
-    {
-        double joyStickValue = jSet.getRawAxis(axis);
-        //Reverse axis because our joystick makes the top -1
-        //Then change the range from -1 -> 1 to 0 -> 1
-        double spinSpeed = ((-1 * joyStickValue) + 1) / 2;
-        
-        SmartDashboard.putDouble("Shooter Speed", spinSpeed);
-        j.set(spinSpeed);
     }
     
     //for testing distance v. shooter speed

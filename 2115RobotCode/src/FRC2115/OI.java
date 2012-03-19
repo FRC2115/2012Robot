@@ -20,8 +20,6 @@ public class OI
     public int leftAxis = 2;
     public Joystick jRightWheel = jGamepad;
     public int rightAxis = 3;
-    public Joystick jShootSetter = jAux;
-    public int shootSetAxis = 3;
     
     public JoystickButton plungerButton = new JoystickButton(jGamepad, 6),
             autoShootSpeedButton = new JoystickButton(jGamepad, 8),

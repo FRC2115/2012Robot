@@ -10,9 +10,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Shooter extends Subsystem 
 {
-    Jaguar j = new Jaguar(RobotMap.shooterMotor);
+    Jaguar j;
     private AnalogChannel us = new AnalogChannel(1, 1);
     
+    public Shooter()
+    {
+        j = new Jaguar(RobotMap.shooterMotor);
+    }
     public void initDefaultCommand() 
     {
         setDefaultCommand(new ShootWithJoyStick());
@@ -47,6 +51,10 @@ public class Shooter extends Subsystem
     //TEMPORARY IMPLEMENTATION. Needs testing at competition
     public double distanceAdjust(int range)
     {
-        return (double)range;
+        //139 inches
+        //1.0 speed top basket
+        
+        //Very bad linear speed algorithm
+        return -(double)(range / 140);
     }
 }

@@ -7,11 +7,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Shooter extends Subsystem 
 {
-    Jaguar j = new Jaguar(RobotMap.shooterMotor);
+    Jaguar j;
     private AnalogChannel us = new AnalogChannel(1, 1);
     private int step = 0;
 
     
+    public Shooter()
+    {
+        j = new Jaguar(RobotMap.shooterMotor);
+    }
     public void initDefaultCommand() 
     {
     }
@@ -45,6 +49,10 @@ public class Shooter extends Subsystem
     //TEMPORARY IMPLEMENTATION. Needs testing at competition
     public double distanceAdjust(int range)
     {
-        return (double)range;
+        //139 inches
+        //1.0 speed top basket
+        
+        //Very bad linear speed algorithm
+        return -(double)(range / 140);
     }
 }

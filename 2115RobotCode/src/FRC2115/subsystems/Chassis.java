@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Dashboard;
 
 public class Chassis extends Subsystem 
 {
-    private final double SPEED_MULTIPLIER = 0.8;
+    private final double SPEED_MULTIPLIER = 0.9;
     
     public RobotDrive drive;
    

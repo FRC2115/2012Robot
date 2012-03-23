@@ -19,21 +19,6 @@ public class Chassis extends Subsystem
         drive.setSafetyEnabled(false);
     }
     
-    public void Straight()
-    {
-        drive.tankDrive(.5, .5);
-    }
-    
-    public void Right()
-    {
-        drive.tankDrive(.5, -.5);
-    }
-    
-    public void Left()
-    {
-        drive.tankDrive(-.5, .5);
-    }
-    
     public void driveWithJoystick(double leftAxis, double rightAxis)
     {
         drive.tankDrive(leftAxis * SPEED_MULTIPLIER, rightAxis * SPEED_MULTIPLIER);

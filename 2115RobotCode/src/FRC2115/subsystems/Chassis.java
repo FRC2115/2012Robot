@@ -19,6 +19,21 @@ public class Chassis extends Subsystem
         drive.setSafetyEnabled(false);
     }
     
+    public void driveStraight(double speed)
+    {
+        drive.tankDrive(speed, speed);
+    }
+    
+    //Rotates the robot in place.
+    //speed >= 0; 
+    public void driveRotate(double speed, boolean clockWise)
+    {
+        if(clockWise)
+            speed *= -1;
+        
+        drive.tankDrive(speed, -speed);
+    }
+    
     public void driveWithJoystick(double leftAxis, double rightAxis)
     {
         drive.tankDrive(leftAxis * SPEED_MULTIPLIER, rightAxis * SPEED_MULTIPLIER);

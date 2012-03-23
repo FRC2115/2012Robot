@@ -24,7 +24,8 @@ public class OI
     
     public JoystickButton plungerButton = new JoystickButton(jGamepad, 6),
             autoShootSpeedButton = new JoystickButton(jGamepad, 8),
-            bridgeButton = new JoystickButton(jGamepad, 13),
+            bridgeUpButton = new JoystickButton(jGamepad,4),
+            bridgeDownButton = new JoystickButton(jGamepad, 2),
             rollerUpButton = new JoystickButton(jGamepad, 10), 
             rollerDownButton = new JoystickButton(jGamepad, 9),
             autoAimButton = new JoystickButton(jAux, 3);
@@ -32,8 +33,8 @@ public class OI
     public OI()
     {
         plungerButton.whenPressed(new DeployPlunger(0.5));
-        bridgeButton.whenPressed(new ExtendArm(0.5));
-        bridgeButton.whenReleased(new RetractArm(0.5));
+        bridgeDownButton.whenPressed(new ExtendArm(0.5));
+        bridgeUpButton.whenPressed(new RetractArm(0.5));
         rollerUpButton.whileHeld(new RollRollerUp());
         rollerDownButton.whileHeld(new RollRollerDown());
         autoAimButton.whileHeld(new AutoAlign());

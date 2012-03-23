@@ -1,8 +1,8 @@
 package FRC2115.commands;
 
-public class RollRoller extends CommandBase
+public class RollRollerUp extends CommandBase
 {    
-    public RollRoller() 
+    public RollRollerUp() 
     {
         requires(roller);
     }
@@ -13,7 +13,7 @@ public class RollRoller extends CommandBase
 
     protected void execute() 
     {
-        roller.roll();
+        roller.rollUp();
     }
 
     protected boolean isFinished()

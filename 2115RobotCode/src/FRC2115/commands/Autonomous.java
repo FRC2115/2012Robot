@@ -16,9 +16,9 @@ public class Autonomous extends CommandGroup
         
         //Run shooter while deploying plunger
         addParallel(new AutoShooterSpeed(), TIME_WHILE_SHOOTING);
-        addSequential(new DeployPlunger(0.5));
-        addSequential(new WaitCommand(0.5)); //Wait for plunger to come back down
-        addSequential(new DeployPlunger(0.5));
+        addSequential(new DeployPlunger(1.0));
+        addSequential(new WaitCommand(1.0)); //Wait for plunger to come back down
+        addSequential(new DeployPlunger(1.0));
         
         //That's all folks!
     }

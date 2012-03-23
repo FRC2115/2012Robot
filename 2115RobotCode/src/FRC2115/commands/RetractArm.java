@@ -1,7 +1,5 @@
 package FRC2115.commands;
 
-import FRC2115.subsystems.BridgeArm;
-
 public class RetractArm extends CommandBase
 {
     private double m_timeout;

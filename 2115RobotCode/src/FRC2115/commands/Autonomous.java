@@ -7,7 +7,7 @@ public class Autonomous extends CommandGroup
 {
     private final double TIME_INITIAL_WAIT = 4.0;
     private final double TIME_TO_REV = 3.0;
-    private final double TIME_WHILE_SHOOTING = 4.0;
+    private final double TIME_WHILE_SHOOTING = 15.0;
     
     public Autonomous()
     {

@@ -11,10 +11,12 @@ import FRC2115.subsystems.Roller;
 import FRC2115.subsystems.Shooter;
 import FRC2115.subsystems.Camera;
 import FRC2115.RobotMap;
+import edu.wpi.first.wpilibj.Dashboard;
 
 public abstract class CommandBase extends Command
 {
     //Create a single static instance of all of your subsystems
+    public static Dashboard d;
     public static OI oi;
     public static Chassis chassis  = new Chassis();
     public static Plunger plunger = new Plunger();

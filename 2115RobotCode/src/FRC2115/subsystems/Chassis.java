@@ -8,6 +8,8 @@ import FRC2115.commands.DriveWithJoystick;
 
 public class Chassis extends Subsystem 
 {
+    private final double SPEED_MULTIPLIER = 0.8;
+    
     public RobotDrive drive;
    
     public Chassis()
@@ -34,7 +36,7 @@ public class Chassis extends Subsystem
     
     public void driveWithJoystick(double leftAxis, double rightAxis)
     {
-        drive.tankDrive(leftAxis, rightAxis);
+        drive.tankDrive(leftAxis * SPEED_MULTIPLIER, rightAxis * SPEED_MULTIPLIER);
     }
     
     public void initDefaultCommand() 

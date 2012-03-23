@@ -55,6 +55,6 @@ public class Shooter extends Subsystem
         //1.0 speed top basket
         
         //Always fullspeed for now
-        return -1.0;
+        return 1.0;
     }
 }

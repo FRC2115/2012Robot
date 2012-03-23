@@ -19,17 +19,17 @@ public class Chassis extends Subsystem
     
     public void Straight()
     {
-        drive.tankDrive(1, 1);
+        drive.tankDrive(.5, .5);
     }
     
     public void Right()
     {
-        drive.tankDrive(1, -1);
+        drive.tankDrive(.5, -.5);
     }
     
     public void Left()
     {
-        drive.tankDrive(-1, 1);
+        drive.tankDrive(-.5, .5);
     }
     
     public void driveWithJoystick(double leftAxis, double rightAxis)

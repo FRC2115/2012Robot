@@ -22,12 +22,12 @@ public class OI
     public Joystick jShootSetter = jAux;
     public int shootSetAxis = 3;
     
-    public JoystickButton plungerButton = new JoystickButton(jGamepad, 6),
-            autoShootSpeedButton = new JoystickButton(jGamepad, 8),
+    public JoystickButton plungerButton = new JoystickButton(jGamepad, 8),
+            autoShootSpeedButton = new JoystickButton(jAux, 2),
             bridgeUpButton = new JoystickButton(jGamepad,4),
             bridgeDownButton = new JoystickButton(jGamepad, 2),
-            rollerUpButton = new JoystickButton(jGamepad, 10), 
-            rollerDownButton = new JoystickButton(jGamepad, 9),
+            rollerUpButton = new JoystickButton(jGamepad, 6), 
+            rollerDownButton = new JoystickButton(jGamepad, 5),
             autoAimButton = new JoystickButton(jAux, 3);
     
     public OI()

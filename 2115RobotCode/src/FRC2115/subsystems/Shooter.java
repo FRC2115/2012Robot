@@ -54,7 +54,7 @@ public class Shooter extends Subsystem
         //139 inches
         //1.0 speed top basket
         
-        //Very bad linear speed algorithm
-        return -(double)(range / 140);
+        //Always fullspeed for now
+        return -1;
     }
 }

@@ -9,6 +9,9 @@ public class Autonomous extends CommandGroup
     private final double TIME_TO_REV = 3.0;
     private final double TIME_WHILE_SHOOTING = 6.0;
     
+    private final double TIME_PUSH_BRIDGE_DOWN = 2.0;
+    private final boolean SHOULD_TIP_BRIDGE = false;
+    
     public Autonomous()
     {
         //Wait for some pressure buildup
@@ -26,6 +29,12 @@ public class Autonomous extends CommandGroup
             addSequential(new DeployPlunger(0.5));
             //Wait for plunger to come back down
             addSequential(new WaitCommand(2.0)); 
+        }
+        
+        if(SHOULD_TIP_BRIDGE)
+        {   
+            //addSequential(null);
+            addSequential(new ExtendArm(), TIME_PUSH_BRIDGE_DOWN);
         }
         
         //That's all folks!

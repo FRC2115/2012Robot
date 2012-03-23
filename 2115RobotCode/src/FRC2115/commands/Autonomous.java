@@ -23,7 +23,7 @@ public class Autonomous extends CommandGroup
         
         for(int i = 0; i < 2; i++)
         {
-            addSequential(new DeployPlunger(1.0));
+            addSequential(new DeployPlunger(0.5));
             //Wait for plunger to come back down
             addSequential(new WaitCommand(1.0)); 
         }

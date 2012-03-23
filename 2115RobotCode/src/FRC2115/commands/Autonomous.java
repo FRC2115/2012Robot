@@ -16,12 +16,12 @@ public class Autonomous extends CommandGroup
         
         //Align and rev up shooter
         //addSequential(new AutoAlign());
-        //addSequential(new AutoShooterSpeed(), TIME_TO_REV);
+        addSequential(new AutoShooterSpeed(), TIME_TO_REV);
         
         //Run shooter while deploying plunger
         addParallel(new AutoShooterSpeed(), TIME_WHILE_SHOOTING);
         
-        for(int i = 0; i <  3; i++)
+        for(int i = 0; i < 2; i++)
         {
             addSequential(new DeployPlunger(1.0));
             //Wait for plunger to come back down

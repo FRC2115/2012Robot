@@ -2,17 +2,13 @@ package FRC2115.commands;
 
 public class RetractArm extends CommandBase
 {
-    private double m_timeout;
-    
-    public RetractArm(double time)
+    public RetractArm()
     {
         requires(arm);
-        m_timeout = time;
     }
 
     protected void initialize() 
     {
-        setTimeout(m_timeout);
     }
 
     protected void execute() 
@@ -22,7 +18,7 @@ public class RetractArm extends CommandBase
 
     protected boolean isFinished()
     {
-        return isTimedOut();
+        return false;
     }
 
     protected void end()

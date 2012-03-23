@@ -33,8 +33,8 @@ public class OI
     public OI()
     {
         plungerButton.whenPressed(new DeployPlunger(0.5));
-        bridgeDownButton.whenPressed(new ExtendArm(0.5));
-        bridgeUpButton.whenPressed(new RetractArm(0.5));
+        bridgeDownButton.whileHeld(new ExtendArm());
+        bridgeUpButton.whileHeld(new RetractArm());
         rollerUpButton.whileHeld(new RollRollerUp());
         rollerDownButton.whileHeld(new RollRollerDown());
         autoAimButton.whileHeld(new AutoAlign());

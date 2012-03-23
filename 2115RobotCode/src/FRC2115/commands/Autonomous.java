@@ -11,7 +11,7 @@ public class Autonomous extends CommandGroup
     public Autonomous()
     {
         //Align and rev up shooter
-        addSequential(new AutoAlign());
+        //addSequential(new AutoAlign());
         addSequential(new AutoShooterSpeed(), TIME_TO_REV);
         
         //Run shooter while deploying plunger

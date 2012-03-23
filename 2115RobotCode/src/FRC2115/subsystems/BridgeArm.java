@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class BridgeArm extends Subsystem
 {
-    private final double speed = 0.3;
+    private final double speed = 1.0;
     private Jaguar armMotor;
     
     public BridgeArm()

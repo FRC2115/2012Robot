@@ -54,7 +54,8 @@ public class Shooter extends Subsystem
         //139 inches
         //1.0 speed top basket
         
-        //Always fullspeed for now
-        return 1.0;
+        //From the key (autonomous)
+        range();
+        return 0.8;
     }
 }

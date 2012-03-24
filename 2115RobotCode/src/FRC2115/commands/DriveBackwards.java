@@ -10,22 +10,26 @@ package FRC2115.commands;
  */
 public class DriveBackwards extends CommandBase {
     
-    public DriveBackwards(double a_Timeout) 
+    private double m_timeout;
+    private double m_speed;
+    
+    public DriveBackwards(double a_Timeout, double speed) 
     {
         requires(chassis);
-        setTimeout(a_Timeout);
+        m_timeout = a_Timeout;
+        m_speed = -speed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-        
+        setTimeout(m_timeout);    
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        chassis.driveStraight(-1);
+        chassis.driveStraight(m_speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -37,13 +41,14 @@ public class DriveBackwards extends CommandBase {
     // Called once after isFinished returns true
     protected void end() 
     {
-        
+        //Stop driving!
+        chassis.driveStraight(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() 
     {
-        
+        end();
     }
 }

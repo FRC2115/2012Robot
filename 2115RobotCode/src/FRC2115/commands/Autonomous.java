@@ -8,8 +8,10 @@ public class Autonomous extends CommandGroup
     private final double TIME_INITIAL_WAIT = 4.0,
             TIME_TO_REV = 3.0,
             TIME_WHILE_SHOOTING = 6.0,
+            
             TIME_PUSH_BRIDGE_DOWN = 2.0,
-            TIME_DRIVE_BACK = 3;
+            TIME_DRIVE_BACK = 3.0,
+            SPEED_DRIVE_BACK = 0.9;
     private final boolean SHOULD_TIP_BRIDGE = true;
     
     public Autonomous()
@@ -33,7 +35,7 @@ public class Autonomous extends CommandGroup
         
         if(SHOULD_TIP_BRIDGE)
         {   
-            addSequential(new DriveBackwards(TIME_DRIVE_BACK), TIME_DRIVE_BACK);
+            addSequential(new DriveBackwards(TIME_DRIVE_BACK, SPEED_DRIVE_BACK));
             addSequential(new ExtendArm(), TIME_PUSH_BRIDGE_DOWN);
         }
         

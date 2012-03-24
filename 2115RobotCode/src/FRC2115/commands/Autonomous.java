@@ -5,12 +5,12 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class Autonomous extends CommandGroup
 {
-    private final double TIME_INITIAL_WAIT = 4.0;
-    private final double TIME_TO_REV = 3.0;
-    private final double TIME_WHILE_SHOOTING = 6.0;
-    
-    private final double TIME_PUSH_BRIDGE_DOWN = 2.0;
-    private final boolean SHOULD_TIP_BRIDGE = false;
+    private final double TIME_INITIAL_WAIT = 4.0,
+            TIME_TO_REV = 3.0,
+            TIME_WHILE_SHOOTING = 6.0,
+            TIME_PUSH_BRIDGE_DOWN = 2.0,
+            TIME_DRIVE_BACK = 3;
+    private final boolean SHOULD_TIP_BRIDGE = true;
     
     public Autonomous()
     {
@@ -33,7 +33,7 @@ public class Autonomous extends CommandGroup
         
         if(SHOULD_TIP_BRIDGE)
         {   
-            //addSequential(null);
+            addSequential(new DriveBackwards(), TIME_DRIVE_BACK);
             addSequential(new ExtendArm(), TIME_PUSH_BRIDGE_DOWN);
         }
         

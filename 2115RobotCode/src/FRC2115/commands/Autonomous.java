@@ -7,7 +7,7 @@ public class Autonomous extends CommandGroup
 {
     private final double TIME_INITIAL_WAIT = 4.0;
     private final double TIME_TO_REV = 3.0;
-    private final double TIME_WHILE_SHOOTING = 4.0;
+    private final double TIME_WHILE_SHOOTING = 6.0;
     
     public Autonomous()
     {
@@ -25,7 +25,7 @@ public class Autonomous extends CommandGroup
         {
             addSequential(new DeployPlunger(0.5));
             //Wait for plunger to come back down
-            addSequential(new WaitCommand(1.0)); 
+            addSequential(new WaitCommand(2.0)); 
         }
         
         //That's all folks!

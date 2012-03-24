@@ -55,7 +55,9 @@ public class Shooter extends Subsystem
         //1.0 speed top basket
         
         //From the key (autonomous)
-        range();
-        return 0.8;
+        if(range < 160)
+            return (.00002 * range * range) + .001  * range + .298;
+        else
+            return 1;
     }
 }

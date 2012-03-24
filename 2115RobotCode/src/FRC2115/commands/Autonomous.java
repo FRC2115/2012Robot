@@ -33,7 +33,7 @@ public class Autonomous extends CommandGroup
         
         if(SHOULD_TIP_BRIDGE)
         {   
-            addSequential(new DriveBackwards(), TIME_DRIVE_BACK);
+            addSequential(new DriveBackwards(TIME_DRIVE_BACK), TIME_DRIVE_BACK);
             addSequential(new ExtendArm(), TIME_PUSH_BRIDGE_DOWN);
         }
         

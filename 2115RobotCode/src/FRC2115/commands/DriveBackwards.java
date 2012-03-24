@@ -10,9 +10,10 @@ package FRC2115.commands;
  */
 public class DriveBackwards extends CommandBase {
     
-    public DriveBackwards() 
+    public DriveBackwards(double a_Timeout) 
     {
         requires(chassis);
+        setTimeout(a_Timeout);
     }
 
     // Called just before this Command runs the first time
